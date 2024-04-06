@@ -18,8 +18,15 @@ class AppWidget {
   }
   static TextStyle  LightTextFeidStyle(){
     return  TextStyle(
-               color: Colors.black38, 
+               color: Colors.black54, 
                fontSize: 15, 
+                fontWeight: FontWeight.w500,
+    );
+  }
+  static TextStyle  semiBoldTextFeidStyle(){
+    return  TextStyle(
+               color: Colors.black38, 
+               fontSize: 18, 
                 fontWeight: FontWeight.w500,
     );
   }

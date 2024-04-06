@@ -48,8 +48,35 @@ class _HomeState extends State<Home> {
               "Discover and Get Great Food",
              style: AppWidget.LightTextFeidStyle()
               ),
-              SizedBox(height: 20,),
-              Row(
+              SizedBox(
+                height: 20,
+                ),
+              showItem(),
+              SizedBox(height: 30,),
+              Row(children: [
+                Container(
+                  child: Column(children: [
+                    Image.asset("images/salad2.jpg",height: 150, width: 150, fit: BoxFit.cover ,),
+                    Text(
+                      "Veggie Taco hash",
+                      style: AppWidget.semiBoldTextFeidStyle(),
+                      ),
+                    Text(
+                      "Veggie Taco hash",
+                      style: AppWidget.semiBoldTextFeidStyle(),
+                      ),
+                  ],),
+                )
+              ],)
+
+      ],
+      ),
+      ),
+    );
+  }
+
+  Widget showItem(){
+    return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween ,
                 children: [
                 GestureDetector(
@@ -68,8 +95,8 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(color: icecream?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(8),
-                      child: Image.network("https://www.shutterstock.com/image-illustration/vanilla-ice-cream-cone-isolated-260nw-421361251.jpg",
-                       height: 40, width: 40, fit: BoxFit.cover, color: icecream? Colors.white: Colors.black,),
+                      child: Image.asset("images/icecream.jpg",
+                       height: 40, width: 40, fit: BoxFit.cover,),
                     ),
                   ),
                 ),
@@ -89,8 +116,8 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(color: pizza?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(8),
-                      child: Image.network("https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg",
-                       height: 40, width: 40, fit: BoxFit.cover, color: pizza? Colors.white: Colors.black,),
+                      child: Image.asset("images/pizza.jpg",
+                       height: 40, width: 40, fit: BoxFit.cover,),
                     ),
                   ),
                 ),
@@ -111,8 +138,8 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(color: salad?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(8),
-                      child: Image.network("https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg",
-                       height: 40, width: 40, fit: BoxFit.cover, color: salad? Colors.white: Colors.black,),
+                      child: Image.asset("images/salad.jpg",
+                       height: 40, width: 40, fit: BoxFit.cover, ),
                     ),
                   ),
                 ),
@@ -133,16 +160,12 @@ class _HomeState extends State<Home> {
                     child: Container(
                       decoration: BoxDecoration(color: burger?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10)),
                       padding: EdgeInsets.all(8),
-                      child: Image.network("https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg",
-                       height: 40, width: 40, fit: BoxFit.cover, color: burger? Colors.white: Colors.black,),
+                      child: Image.asset("images/burger.jpg",
+                       height: 40, width: 40, fit: BoxFit.cover,),
                     ),
                   ),
                 ),
-              ],)
-
-      ],
-      ),
-      ),
-    );
+              ],
+               );
   }
 }
