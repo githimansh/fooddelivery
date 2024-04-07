@@ -25,7 +25,7 @@ class AppWidget {
   }
   static TextStyle  semiBoldTextFeidStyle(){
     return  TextStyle(
-               color: Colors.black38, 
+               color: Colors.black87, 
                fontSize: 18, 
                 fontWeight: FontWeight.w500,
     );

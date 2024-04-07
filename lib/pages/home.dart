@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/pages/details.dart';
 import 'package:fooddelivery/widget/widget_support.dart';
 
 class Home extends StatefulWidget {
@@ -18,7 +19,6 @@ class _HomeState extends State<Home> {
         margin: const EdgeInsets.only(
           top: 50,
           left: 20,
-          right: 20,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,6 +31,7 @@ class _HomeState extends State<Home> {
              style: AppWidget.boldtextFeidStyle()
               ),
                Container(
+                margin: EdgeInsets.only(right: 20),
                 padding: const EdgeInsets.all(3),
           decoration: BoxDecoration(color: Colors.black, borderRadius:BorderRadius.circular(8)),
           child: const Icon(
@@ -51,24 +52,120 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 20,
                 ),
-              showItem(),
-              SizedBox(height: 30,),
-              Row(children: [
-                Container(
-                  child: Column(children: [
-                    Image.asset("images/salad2.jpg",height: 150, width: 150, fit: BoxFit.cover ,),
-                    Text(
-                      "Veggie Taco hash",
-                      style: AppWidget.semiBoldTextFeidStyle(),
+              Container(
+                margin: EdgeInsets.only(right: 20),
+                child: showItem()),
+              SizedBox(height: 30,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Details(),),);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      child: Material(
+                        elevation: 5,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                            Image.asset("images/salad3.jpg",
+                            height: 150, 
+                            width: 150,
+                             fit: BoxFit.cover,
+                             ),
+                            Text("Veggie Taco hash",
+                              style: AppWidget.semiBoldTextFeidStyle(),
+                              ),
+                              SizedBox(height: 5,),
+                            Text( "Fresh and healthy",
+                              style: AppWidget.LightTextFeidStyle(),
+                              ),
+                              SizedBox(height: 5,),
+                              Text("\$25", 
+                              style: AppWidget.semiBoldTextFeidStyle(),)
+                          ],),
+                        ),
                       ),
-                    Text(
-                      "Veggie Taco hash",
-                      style: AppWidget.semiBoldTextFeidStyle(),
+                    ),
+                  ),
+                  SizedBox(width: 15,),
+                  Container(
+                    margin: EdgeInsets.all(4),
+                    child: Material(
+                      elevation: 5,
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        padding: EdgeInsets.all(14),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                          Image.asset("images/salad2.jpg",
+                          height: 150, 
+                          width: 150,
+                           fit: BoxFit.cover,
+                           ),
+                          Text("Mix Veg Salad",
+                            style: AppWidget.semiBoldTextFeidStyle(),
+                            ),
+                            SizedBox(height: 5,),
+                          Text( "Spicy with Onion",
+                            style: AppWidget.LightTextFeidStyle(),
+                            ),
+                            SizedBox(height: 5,),
+                            Text("\$25", style: AppWidget.semiBoldTextFeidStyle(),
+                            ),
+                        ],),
                       ),
-                  ],),
-                )
-              ],)
-
+                    ),
+                  )
+                ],
+                ),
+              ),
+              SizedBox(height: 30,
+              ),
+              Container(
+                margin: EdgeInsets.only(right: 20),
+                child: Material(
+                  elevation: 5,
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    Image.asset("images/salad4.jpg",
+                    height: 120, width: 120, fit: BoxFit.cover,
+                    ),
+                    SizedBox(width: 20,),
+                    Column(children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("Mediterrenean Chickpea Salad", style: AppWidget.semiBoldTextFeidStyle(),),
+                        ),
+                        SizedBox(height: 5,),
+                      Container(
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("Honey goot cheese", style: AppWidget.LightTextFeidStyle(),),
+                        ),
+                        SizedBox(height: 5,),
+                      Container(
+                        width: MediaQuery.of(context).size.width/2,
+                        child: Text("\$28", style: AppWidget.semiBoldTextFeidStyle(),),
+                        ),
+                    ],
+                    ),
+                   ],
+                   ),
+                  ),
+                ),
+              ),
       ],
       ),
       ),
@@ -93,7 +190,7 @@ class _HomeState extends State<Home> {
                     elevation: 5,
                     borderRadius: BorderRadius.circular(10),
                     child: Container(
-                      decoration: BoxDecoration(color: icecream?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(color: icecream?Colors.black: Colors.white, borderRadius: BorderRadius.circular(10),),
                       padding: EdgeInsets.all(8),
                       child: Image.asset("images/icecream.jpg",
                        height: 40, width: 40, fit: BoxFit.cover,),
