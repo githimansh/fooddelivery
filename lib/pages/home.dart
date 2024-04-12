@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                            Image.asset("images/salad3.jpg",
+                            Image.asset("images/salad3.png",
                             height: 150, 
                             width: 150,
                              fit: BoxFit.cover,
@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                          Image.asset("images/salad2.jpg",
+                          Image.asset("images/salad2.png",
                           height: 150, 
                           width: 150,
                            fit: BoxFit.cover,
@@ -140,7 +140,7 @@ class _HomeState extends State<Home> {
                    child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    Image.asset("images/salad4.jpg",
+                    Image.asset("images/salad4.png",
                     height: 120, width: 120, fit: BoxFit.cover,
                     ),
                     SizedBox(width: 20,),

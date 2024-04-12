@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/pages/signup.dart';
+import 'package:fooddelivery/pages/login.dart';
 import 'package:fooddelivery/widget/widget_support.dart';
 
-class LogIn extends StatefulWidget{
-  const LogIn({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp ({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
-}
+  State<SignUp> createState() => _SignUpState();
+} 
 
-class _LogInState extends State<LogIn> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: Container(
         child: Stack(
           children: [
@@ -55,13 +55,23 @@ class _LogInState extends State<LogIn> {
             child: Container(
               padding: EdgeInsets.only(left: 20, right: 20),
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height/2,
+              height: MediaQuery.of(context).size.height/1.8,
                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20),),
               child: Column(children: [
                 SizedBox(
                   height: 30,
                   ),
-                Text("Login", style: AppWidget.HeadlinetextFeidStyle(),
+                Text("Sign up", style: AppWidget.HeadlinetextFeidStyle(),
+                ),
+                 SizedBox(
+                  height: 30,
+                  ),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Name', 
+                  hintStyle: AppWidget.semiBoldTextFeidStyle(), 
+                  prefixIcon: Icon(Icons.person_outlined),
+                  ),
                 ),
                 SizedBox(
                   height: 30,
@@ -84,13 +94,6 @@ class _LogInState extends State<LogIn> {
                   prefixIcon: Icon(Icons.password_outlined),
                   ),
                 ),
-                SizedBox(height: 20,),
-                Container(
-                  alignment: Alignment.topRight,
-                  child: Text("Forget Password",
-                   style: AppWidget.semiBoldTextFeidStyle(),
-                   ),
-                ),
                 SizedBox(height: 100,),
                 Material(
                   elevation: 5,
@@ -100,7 +103,7 @@ class _LogInState extends State<LogIn> {
                     width: 170,
                     decoration: BoxDecoration(color: Color.fromARGB(255, 61, 45, 114), borderRadius: BorderRadius.circular(20),),
                     child: Center(
-                      child: Text("LOGIN", 
+                      child: Text("SIGN UP", 
                       style: TextStyle(color: Colors.white, 
                       fontSize:18,
                        fontWeight: FontWeight.bold, ),),
@@ -112,11 +115,10 @@ class _LogInState extends State<LogIn> {
           ),
            SizedBox(height: 90,),
                 GestureDetector(
-                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUp(),),
-                     );
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> LogIn() ) );
                   },
-                  child: Text("Don't have an account? Sign up", style:AppWidget.semiBoldTextFeidStyle(),)),
+                  child: Text("Already have an account? Login", style:AppWidget.semiBoldTextFeidStyle(),)),
         ],),
       ),
       ],

@@ -30,7 +30,7 @@ class _DetailsState extends State<Details> {
             Icons.arrow_back_ios_new_outlined,
              color: Colors.black,),
              ),
-             Image.asset("images/salad3.jpg",
+             Image.asset("images/salad3.png",
              width: MediaQuery.of(context).size.width,
              height: MediaQuery.of(context).size.height/3,
              fit: BoxFit.fill,
