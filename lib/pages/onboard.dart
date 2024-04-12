@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/pages/signup.dart';
 import 'package:fooddelivery/widget/content_model.dart';
 import 'package:fooddelivery/widget/widget_support.dart';
 
@@ -29,38 +30,43 @@ class _OnboardState extends State<Onboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-    PageView.builder(
-      controller: _controller,
-      itemCount: contents.length,
-      onPageChanged: (int index){
-        setState(() {
-          currentIndex= index;
-        });
-      },
-      itemBuilder: (_, i){
-      return Padding(
-        padding: EdgeInsets.all(20),
-      child: Column(
-        children: [
-       Image.asset(
-        contents[i].image,
-       height: 450,
-       width: MediaQuery.of(context).size.width/1.5, 
-       fit: BoxFit.fill,
-       ),
-       SizedBox(height: 40,),
-        Text(contents[i].title,
-         style: AppWidget.semiBoldTextFeidStyle(),
+    Expanded(
+      child: PageView.builder(
+        controller: _controller,
+        itemCount: contents.length,
+        onPageChanged: (int index){
+          setState(() {
+            currentIndex= index;
+          });
+        },
+        itemBuilder: (_, i){
+        return Padding(
+          padding: EdgeInsets.only(top: 40,
+          right: 20,
+          left: 20,
+          ),
+        child: Column(
+          children: [
+         Image.asset(
+          contents[i].image,
+         height: 400,
+         width: MediaQuery.of(context).size.width, 
+         fit: BoxFit.fill,
          ),
-         SizedBox(height: 20,),
-         Text(contents[i].description, 
-         style: AppWidget.LightTextFeidStyle(),
-         ),
-      ],
-      ),
-      );
-    }
-      ),
+         SizedBox(height: 40,),
+          Text(contents[i].title,
+           style: AppWidget.semiBoldTextFeidStyle(),
+           ),
+           SizedBox(height: 20,),
+           Text(contents[i].description, 
+           style: AppWidget.LightTextFeidStyle(),
+           ),
+        ],
+        ),
+        );
+      }
+        ),
+    ),
       Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -69,7 +75,37 @@ class _OnboardState extends State<Onboard> {
            ), 
         ),
       ),
-      ],),
+       GestureDetector(
+         onTap: () {
+          if(currentIndex==contents.length-1){
+              Navigator.pushReplacement(context,
+               MaterialPageRoute(builder: (context)=> SignUp()),
+               );
+          }
+          _controller.nextPage(
+            duration: Duration(milliseconds: 100), 
+            curve: Curves.bounceOut);
+         },
+         child: Container(
+          decoration: BoxDecoration(
+            color: Colors.orangeAccent, 
+          borderRadius: BorderRadius.circular(20),
+          ),
+          height: 60,
+          margin: EdgeInsets.all(40),
+          width: double.infinity,
+          child: Center(
+            child: Text(
+             currentIndex==contents.length-1?"Start": "Next",
+               style: TextStyle(color: Colors.white, 
+               fontSize: 20,
+               fontWeight: FontWeight.bold
+               ),),
+          ),
+         ),
+       ),
+      ],
+      ),
     );
   }
   Container buildDot (int index, BuildContext context){

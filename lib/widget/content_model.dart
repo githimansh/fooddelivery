@@ -11,15 +11,15 @@ class UnboardingContent {
 
   List<UnboardingContent> contents = [
     UnboardingContent(
-      description: 'Pick your food from our memu\n   More than 50 times',
+      description: 'Pick your food from our memu\n        More than 50 times',
      image: "images/screen1.png",
-      title: "Select from Our\n   Best Menu"),
+      title: "Select from Our Best Menu"),
      UnboardingContent(
-      description: 'You can pay Cash on delivery and\n   Card payment is available',
+      description: 'You can pay Cash on delivery and\n     Card payment is available',
       image: "images/screen2.png", 
       title: 'Easy and Online Payment'),
       UnboardingContent(
-        description: 'Deliver your food at your\n   Doorstep', 
+        description: 'Deliver your food at your\n            Doorstep', 
       image: "images/screen3.png", 
       title: 'Quick Delivery at Your Doorstep'),
   ];
