@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fooddelivery/pages/bottomnav.dart';
 import 'package:fooddelivery/pages/login.dart';
 import 'package:fooddelivery/widget/widget_support.dart';
 
@@ -31,7 +32,10 @@ final _formkey = GlobalKey<FormState>();
       backgroundColor: Color.fromARGB(255, 213, 88, 88),
       content: Text(
         "Registred Successfully",
-       style: TextStyle(fontSize: 20),))));
+       style: TextStyle(fontSize: 20),))),
+       );
+       Navigator.pushReplacement(context, 
+       MaterialPageRoute(builder: (context)=> BottomNav()),);
   }on FirebaseException catch(e){
     if(e.code=='weak-password'){
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
